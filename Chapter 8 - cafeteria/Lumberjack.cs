@@ -24,20 +24,35 @@ namespace Chapter_8___cafeteria
         }
         public int FlapjackCount
         {
-            get { return -1; }
+            get { return meal.Count; }
         }
 
         public void TakeFlapjacks(Flapjack food, int howMany)
         {
             // Add some number of flapjacks to the Meal stack
+            for (int i = 0; i < howMany; i++)
+                meal.Push(food);
         }
 
         public void EatFlapjacks()
         {
-            string output = $"{Name}'s eating flapjacks";
-            foreach (Flapjack food in meal)
+            //int initialCount = FlapjackCount;
+            //string output = $"{Name}'s eating flapjacks" + Environment.NewLine;
+            //for (int i = 0; i < initialCount; i++)
+            //{
+            //    output += $"{Name} ate a {meal.Pop().ToString().ToLower()} flapjack" + Environment.NewLine;
+            //}
+            //Console.WriteLine(output);
+            string output = string.Empty;
+            if (FlapjackCount == 0)
+                output += $"{Name} doesn't like flapjacks" + Environment.NewLine;
+            else
             {
-                output += $"{Name} ate a {meal.Pop().ToString().ToLower()} flapjack";
+                output += $"{Name}'s eating flapjacks" + Environment.NewLine;
+                while (FlapjackCount > 0)
+                {
+                    output += $"{Name} ate a {meal.Pop().ToString().ToLower()} flapjack" + Environment.NewLine;
+                }
             }
             Console.WriteLine(output);
         }

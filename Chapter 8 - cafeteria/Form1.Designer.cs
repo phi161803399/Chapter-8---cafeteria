@@ -33,15 +33,15 @@
             this.btnAddLumberjack = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numFood = new System.Windows.Forms.NumericUpDown();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.banana = new System.Windows.Forms.RadioButton();
+            this.browned = new System.Windows.Forms.RadioButton();
+            this.soggy = new System.Windows.Forms.RadioButton();
+            this.crispy = new System.Windows.Forms.RadioButton();
             this.btnAddFlapjacks = new System.Windows.Forms.Button();
-            this.txtOrders = new System.Windows.Forms.TextBox();
             this.btnNextLumberjack = new System.Windows.Forms.Button();
             this.line = new System.Windows.Forms.ListBox();
-            this.lblLine = new System.Windows.Forms.Label();
+            this.lblNextInLine = new System.Windows.Forms.Label();
+            this.nextInLine = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFood)).BeginInit();
             this.SuspendLayout();
@@ -70,17 +70,21 @@
             this.btnAddLumberjack.TabIndex = 2;
             this.btnAddLumberjack.Text = "Add lumberjack";
             this.btnAddLumberjack.UseVisualStyleBackColor = true;
+            this.btnAddLumberjack.Click += new System.EventHandler(this.btnAddLumberjack_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nextInLine);
             this.groupBox1.Controls.Add(this.numFood);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.banana);
+            this.groupBox1.Controls.Add(this.btnNextLumberjack);
+            this.groupBox1.Controls.Add(this.browned);
+            this.groupBox1.Controls.Add(this.soggy);
+            this.groupBox1.Controls.Add(this.btnAddFlapjacks);
+            this.groupBox1.Controls.Add(this.crispy);
             this.groupBox1.Location = new System.Drawing.Point(145, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(124, 150);
+            this.groupBox1.Size = new System.Drawing.Size(140, 320);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Feed lumberjack";
@@ -102,75 +106,67 @@
             0,
             0});
             // 
-            // radioButton1
+            // banana
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 58);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Crispy";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.banana.AutoSize = true;
+            this.banana.Checked = true;
+            this.banana.Location = new System.Drawing.Point(6, 127);
+            this.banana.Name = "banana";
+            this.banana.Size = new System.Drawing.Size(62, 17);
+            this.banana.TabIndex = 3;
+            this.banana.TabStop = true;
+            this.banana.Text = "Banana";
+            this.banana.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // browned
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 81);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(55, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Soggy";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.browned.AutoSize = true;
+            this.browned.Location = new System.Drawing.Point(6, 104);
+            this.browned.Name = "browned";
+            this.browned.Size = new System.Drawing.Size(67, 17);
+            this.browned.TabIndex = 2;
+            this.browned.Text = "Browned";
+            this.browned.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // soggy
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 104);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(67, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Browned";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.soggy.AutoSize = true;
+            this.soggy.Location = new System.Drawing.Point(6, 81);
+            this.soggy.Name = "soggy";
+            this.soggy.Size = new System.Drawing.Size(55, 17);
+            this.soggy.TabIndex = 1;
+            this.soggy.Text = "Soggy";
+            this.soggy.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // crispy
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 127);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(62, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Banana";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.crispy.AutoSize = true;
+            this.crispy.Location = new System.Drawing.Point(6, 58);
+            this.crispy.Name = "crispy";
+            this.crispy.Size = new System.Drawing.Size(53, 17);
+            this.crispy.TabIndex = 0;
+            this.crispy.Text = "Crispy";
+            this.crispy.UseVisualStyleBackColor = true;
             // 
             // btnAddFlapjacks
             // 
-            this.btnAddFlapjacks.Location = new System.Drawing.Point(145, 234);
+            this.btnAddFlapjacks.Location = new System.Drawing.Point(6, 156);
             this.btnAddFlapjacks.Name = "btnAddFlapjacks";
             this.btnAddFlapjacks.Size = new System.Drawing.Size(124, 23);
             this.btnAddFlapjacks.TabIndex = 4;
             this.btnAddFlapjacks.Text = "Add flapjacks";
             this.btnAddFlapjacks.UseVisualStyleBackColor = true;
-            // 
-            // txtOrders
-            // 
-            this.txtOrders.Location = new System.Drawing.Point(145, 263);
-            this.txtOrders.Multiline = true;
-            this.txtOrders.Name = "txtOrders";
-            this.txtOrders.Size = new System.Drawing.Size(124, 80);
-            this.txtOrders.TabIndex = 5;
+            this.btnAddFlapjacks.Click += new System.EventHandler(this.btnAddFlapjacks_Click);
             // 
             // btnNextLumberjack
             // 
-            this.btnNextLumberjack.Location = new System.Drawing.Point(145, 350);
+            this.btnNextLumberjack.Location = new System.Drawing.Point(6, 271);
             this.btnNextLumberjack.Name = "btnNextLumberjack";
             this.btnNextLumberjack.Size = new System.Drawing.Size(124, 23);
             this.btnNextLumberjack.TabIndex = 6;
             this.btnNextLumberjack.Text = "Next lumberjack";
             this.btnNextLumberjack.UseVisualStyleBackColor = true;
+            this.btnNextLumberjack.Click += new System.EventHandler(this.btnNextLumberjack_Click);
             // 
             // line
             // 
@@ -180,25 +176,30 @@
             this.line.Size = new System.Drawing.Size(124, 264);
             this.line.TabIndex = 7;
             // 
-            // lblLine
+            // lblNextInLine
             // 
-            this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(12, 78);
-            this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(71, 13);
-            this.lblLine.TabIndex = 8;
-            this.lblLine.Text = "Breakfast line";
+            this.lblNextInLine.AutoSize = true;
+            this.lblNextInLine.Location = new System.Drawing.Point(12, 78);
+            this.lblNextInLine.Name = "lblNextInLine";
+            this.lblNextInLine.Size = new System.Drawing.Size(71, 13);
+            this.lblNextInLine.TabIndex = 8;
+            this.lblNextInLine.Text = "Breakfast line";
+            // 
+            // nextInLine
+            // 
+            this.nextInLine.AutoSize = true;
+            this.nextInLine.Location = new System.Drawing.Point(6, 182);
+            this.nextInLine.Name = "nextInLine";
+            this.nextInLine.Size = new System.Drawing.Size(0, 13);
+            this.nextInLine.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 390);
-            this.Controls.Add(this.lblLine);
+            this.ClientSize = new System.Drawing.Size(294, 448);
+            this.Controls.Add(this.lblNextInLine);
             this.Controls.Add(this.line);
-            this.Controls.Add(this.btnNextLumberjack);
-            this.Controls.Add(this.txtOrders);
-            this.Controls.Add(this.btnAddFlapjacks);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddLumberjack);
             this.Controls.Add(this.txtName);
@@ -222,15 +223,15 @@
         private System.Windows.Forms.Button btnAddLumberjack;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown numFood;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton banana;
+        private System.Windows.Forms.RadioButton browned;
+        private System.Windows.Forms.RadioButton soggy;
+        private System.Windows.Forms.RadioButton crispy;
         private System.Windows.Forms.Button btnAddFlapjacks;
-        private System.Windows.Forms.TextBox txtOrders;
         private System.Windows.Forms.Button btnNextLumberjack;
         private System.Windows.Forms.ListBox line;
-        private System.Windows.Forms.Label lblLine;
+        private System.Windows.Forms.Label lblNextInLine;
+        private System.Windows.Forms.Label nextInLine;
     }
 }
 
